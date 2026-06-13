@@ -1,7 +1,7 @@
 <?php
 include("function.php");
 $id = $_GET['id'];
-echo $id;
+
 $data = lien($id);
 ?>
 <!DOCTYPE html>
