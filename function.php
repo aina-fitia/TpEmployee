@@ -120,7 +120,7 @@ function recherche_suivant($dept,$nom,$min_age,$max_age){
     where departments.dept_name like '%s' and 
     (employees.first_name like '%s' or employees.last_name like '%s') 
     and TIMESTAMPDIFF(YEAR, employees.birth_date, CURDATE()) >= %s and 
-    TIMESTAMPDIFF(YEAR, employees.birth_date, CURDATE()) <= %s limit 20, 10  ";
+    TIMESTAMPDIFF(YEAR, employees.birth_date, CURDATE()) <= %s limit 20, 20  ";
     $nom_depart = '%' . $dept . '%';
     $nom_emp = '%' . $nom . '%';
     $sql = sprintf($sql,$nom_depart,$nom_emp,$nom_emp,$min_age,$max_age);
