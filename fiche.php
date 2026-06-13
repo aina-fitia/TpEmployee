@@ -4,6 +4,8 @@ $id = $_GET['id'];
 
 $data = fiche_employee($id);
 // var_dump($data);
+$age = calculer_age($data[0]['first_name']);
+echo $age[0]['age'];
 ?>
 <!DOCTYPE html>
 <html lang="en">

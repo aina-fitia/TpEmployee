@@ -5,7 +5,7 @@ $nom = $_GET['emp_name'];
 $min_age = $_GET['min_age'];
 $max_age = $_GET['max_age'];
 
-$data = recherche($dept,$nom,$min_age,$max_age);
+$data = recherche_suivant($dept,$nom,$min_age,$max_age);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@ $data = recherche($dept,$nom,$min_age,$max_age);
         </tr>
         <?php } ?>
     </table>
-    <h3><a href="suivant.php?dept=<?=$dept?>&&emp_name=<?=$nom?>&&min_age=<?=$min_age?>&&max_age=<?=$max_age?>">Suivant</a></h3>
+    <h3><a href="traitement_formulaire.php?dept=<?=$dept?>&&emp_name=<?=$nom?>&&min_age=<?=$min_age?>&&max_age=<?=$max_age?>">Precedent</a></h3>
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

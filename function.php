@@ -86,3 +86,43 @@ function fiche_employee($id){
     $sql = sprintf($sql,$id);
     return get_all_lines($sql);
 }
+function calculer_age($nom){
+    $sql = "SELECT TIMESTAMPDIFF(YEAR, birth_date, CURDATE()) as age 
+            from employees
+            where first_name like  '%s'  or  last_name  like '%s'";
+    $search = '%' . $nom . '%';
+    $sql = sprintf($sql, $search, $search);
+    return get_all_lines($sql);
+}
+
+function recherche($dept,$nom,$min_age,$max_age){
+    $sql = "SELECT departments.dept_name , employees.first_name, 
+    employees.last_name , TIMESTAMPDIFF(YEAR, employees.birth_date, CURDATE()) as age
+    from departments 
+    join dept_emp on departments.dept_no = dept_emp.dept_no
+    join employees on dept_emp.emp_no = employees.emp_no
+    where departments.dept_name like '%s' and 
+    (employees.first_name like '%s' or employees.last_name like '%s') 
+    and TIMESTAMPDIFF(YEAR, employees.birth_date, CURDATE()) >= %s and 
+    TIMESTAMPDIFF(YEAR, employees.birth_date, CURDATE()) <= %s limit 20 ";
+    $nom_depart = '%' . $dept . '%';
+    $nom_emp = '%' . $nom . '%';
+    $sql = sprintf($sql,$nom_depart,$nom_emp,$nom_emp,$min_age,$max_age);
+    return get_all_lines($sql);
+}
+
+function recherche_suivant($dept,$nom,$min_age,$max_age){
+    $sql = "SELECT departments.dept_name , employees.first_name, 
+    employees.last_name , TIMESTAMPDIFF(YEAR, employees.birth_date, CURDATE()) as age
+    from departments 
+    join dept_emp on departments.dept_no = dept_emp.dept_no
+    join employees on dept_emp.emp_no = employees.emp_no
+    where departments.dept_name like '%s' and 
+    (employees.first_name like '%s' or employees.last_name like '%s') 
+    and TIMESTAMPDIFF(YEAR, employees.birth_date, CURDATE()) >= %s and 
+    TIMESTAMPDIFF(YEAR, employees.birth_date, CURDATE()) <= %s limit 20, 10  ";
+    $nom_depart = '%' . $dept . '%';
+    $nom_emp = '%' . $nom . '%';
+    $sql = sprintf($sql,$nom_depart,$nom_emp,$nom_emp,$min_age,$max_age);
+    return get_all_lines($sql);
+}

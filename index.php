@@ -15,20 +15,20 @@ $data = show_dept_manager();
 </head>
 
 <body>
-    
+
     <h1>Liste des departements:</h1>
-    <table width="1000" height="500">
+    <table width="1000" height="500" class="table table-bordered">
         <tr>
-            <td class="border" >Id</td>
-            <td class="border">Nom departements</td>
-            <td class="border">Manager</td>
+            <td>Id</td>
+            <td>Nom departements</td>
+            <td>Manager</td>
         </tr>
         <?php foreach($data as $d){?>
         <tr>
-            <td class="border"> <?= $d["id"]?></td>
-            <td class="border"> <a href="employe.php?id=<?=$d["id"]?>"><?= $d["nom"]?></a></td>
-            
-            <td class="border"> <?= $d["first_name"]?> <?= $d["last_name"]?> </td>
+            <td> <?= $d["id"]?></td>
+            <td> <a href="employe.php?id=<?=$d["id"]?>"><?= $d["nom"]?></a></td>
+
+            <td> <?= $d["first_name"]?> <?= $d["last_name"]?> </td>
         </tr>
         <?php } ?>
     </table>
