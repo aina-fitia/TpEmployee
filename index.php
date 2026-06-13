@@ -19,7 +19,7 @@ $data = show_dept_manager();
     <table width="1000" height="500">
         <tr>
             <td class="border" >Id</td>
-            <td class="border">Nom</td>
+            <td class="border">Nom departements</td>
             <td class="border">Manager</td>
         </tr>
         <?php foreach($data as $d){?>

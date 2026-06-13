@@ -61,7 +61,9 @@ function show_dept_manager2($date){
 }
 
 function lien($id){
-    $sql = "SELECT departments.dept_no as id , departments.dept_name as nom  ,employees.last_name
+    $sql = "SELECT departments.dept_no as id ,
+     departments.dept_name as nom,employees.last_name, employees.first_name,
+    employees.emp_no as id_emp
     from departments 
     join dept_emp on departments.dept_no = dept_emp.dept_no
     join employees on dept_emp.emp_no = employees.emp_no

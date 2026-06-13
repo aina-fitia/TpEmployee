@@ -20,14 +20,14 @@ $data = lien($id);
     <table width="1000" height="500" class="table table-bordered">
         <tr>
             <td >Id</td>
-            <td >Nom</td>
+            <td >Nom departements</td>
             <td >Employees</td>
         </tr>
         <?php foreach($data as $d){?>
         <tr>
             <td > <?= $d["id"]?></td>
-            <td > <?= $d["nom"]?></a></td>
-            <td > <?= $d["last_name"]?></td>
+            <td > <?= $d["nom"] ?></td>
+            <td > <a href="fiche.php?id=<?= $d['id_emp'] ?>"> <?= $d["first_name"]?>  <?= $d["last_name"]?>  </a></td>
         </tr>
         <?php } ?>
     </table>
