@@ -42,7 +42,8 @@ function show_dept(){
 }
 
 function  show_dept_manager() {
-    $sql = "SELECT departments.dept_no as id  , departments.dept_name as nom , employees.last_name
+    $sql = "SELECT departments.dept_no as id  , departments.dept_name as nom ,
+     employees.last_name , employees.first_name
     from departments 
     join dept_manager on dept_manager.dept_no = departments.dept_no
     join employees on dept_manager.emp_no = employees.emp_no

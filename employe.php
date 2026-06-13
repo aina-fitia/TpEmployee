@@ -30,6 +30,7 @@ $data = lien($id);
             <td > <a href="fiche.php?id=<?= $d['id_emp'] ?>"> <?= $d["first_name"]?>  <?= $d["last_name"]?>  </a></td>
         </tr>
         <?php } ?>
+        
     </table>
 
     <script src="js/bootstrap.bundle.min.js"></script>

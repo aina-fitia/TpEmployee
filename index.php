@@ -15,6 +15,7 @@ $data = show_dept_manager();
 </head>
 
 <body>
+    
     <h1>Liste des departements:</h1>
     <table width="1000" height="500">
         <tr>
@@ -27,10 +28,11 @@ $data = show_dept_manager();
             <td class="border"> <?= $d["id"]?></td>
             <td class="border"> <a href="employe.php?id=<?=$d["id"]?>"><?= $d["nom"]?></a></td>
             
-            <td class="border"> <?= $d["last_name"]?></td>
+            <td class="border"> <?= $d["first_name"]?> <?= $d["last_name"]?> </td>
         </tr>
         <?php } ?>
     </table>
+    <h1>=><a href="formulaire.php">Formulaire de recherche</a></h1>
 
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
