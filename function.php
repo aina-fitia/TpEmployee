@@ -59,7 +59,7 @@ function show_dept_manager2($date){
     $sql = sprintf($sql,$date);
     return get_all_lines($sql);
 }
-
+//lien index.php vers employe.php
 function lien($id){
     $sql = "SELECT departments.dept_no as id ,
      departments.dept_name as nom,employees.last_name, employees.first_name,
@@ -68,6 +68,20 @@ function lien($id){
     join dept_emp on departments.dept_no = dept_emp.dept_no
     join employees on dept_emp.emp_no = employees.emp_no
     where departments.dept_no = '%s'";
+    $sql = sprintf($sql,$id);
+    return get_all_lines($sql);
+}
+
+function fiche_employee($id){
+    $sql = "SELECT employees.emp_no as id, 
+    employees.first_name, employees.last_name, employees.hire_date ,
+    employees.birth_date,employees.gender,salaries.salary,salaries.from_date,
+    salaries.to_date
+    
+    from employees 
+    join salaries on employees.emp_no = salaries.emp_no
+
+    where employees.emp_no = '%s'";
     $sql = sprintf($sql,$id);
     return get_all_lines($sql);
 }
