@@ -86,6 +86,7 @@ function fiche_employee($id){
     $sql = sprintf($sql,$id);
     return get_all_lines($sql);
 }
+//teste fontsiny hoe nandeh ve le timestampdiff
 function calculer_age($nom){
     $sql = "SELECT TIMESTAMPDIFF(YEAR, birth_date, CURDATE()) as age 
             from employees
