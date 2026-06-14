@@ -16,7 +16,7 @@ $data = show_dept_manager();
 
 <body>
 
-    <h1>Liste des departements:</h1>
+    <h1>Liste des departements :</h1>
     <table width="1000" height="500" class="table table-bordered">
         <tr>
             <td>Id</td>
